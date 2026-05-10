@@ -12,7 +12,7 @@ func _ready() -> void:
 		0:
 			$DeathScreen.texture = load("res://Screens/big guy death.png")
 		1:
-			pass
+			$DeathScreen.texutre = load("res://Screens/gameover.png")
 		2: 
 			$DeathScreen.texture = load("res://Screens/terminator-2-judgment-day.jpg")
 			$DeathScreen.scale = Vector2(2, 2)
