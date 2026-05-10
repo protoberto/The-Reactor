@@ -33,7 +33,7 @@ text = "G A M E   O V E R"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="DeathScreen" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(960, 540)
 texture = ExtResource("3_2oltb")

@@ -10,11 +10,12 @@ func _ready() -> void:
 	cause_of_death = Data.cause_of_death
 	match cause_of_death:
 		0:
-			pass
+			$DeathScreen.texture = load("res://Screens/big guy death.png")
 		1:
 			pass
 		2: 
-			pass
+			$DeathScreen.texture = load("res://Screens/terminator-2-judgment-day.jpg")
+			$DeathScreen.scale = Vector2(2, 2)
 	match (randi_range(0, 6)):
 		0:
 			$Tip.text = "Keep an ear out for footsteps, you're never as safe as you think."
