@@ -1,10 +1,13 @@
 extends Control
 
 # Simple start screen, contains a simple paragraph explaining the story of the game
-# TODO: Make credits button that changes the text in the story_text node in order to match it, and then turns it back
 
 # var game_scene = preload("res://Scenes/main.tscn")
 var clickable = true
+var mouse_mode = true
+var select = -1
+var story_or_credits
+var in_sub_menu = false
 
 #Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,18 +15,55 @@ func _ready() -> void:
 	fade_in.tween_property($Music, "volume_db", -10, 12).set_trans(Tween.TRANS_LINEAR)
 	$story_text.hide()
 	$BackToMenu.hide()
-	if Input.is_action_pressed("move_forward"):
-		pass
-	if Input.is_action_pressed("scroll_down"):
-		pass
-	if Input.is_action_pressed("interact"):
-		pass
-	if InputEventMouseMotion:
-		pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("move_forward"):
+		if select == -1:
+			mouse_mode = false
+			select = 1
+			Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+			mouse_filter = Control.MOUSE_FILTER_IGNORE
+		elif select > 1:
+			select -= 1 
+			print(select)
+			pass
+	if Input.is_action_just_pressed("scroll_down"):
+		if select == -1:
+			mouse_mode = false
+			select = 1
+			Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+			mouse_filter = Control.MOUSE_FILTER_IGNORE
+		elif select >= 1 && select < 4:
+			select += 1 
+			print(select)
+			pass
+	if Input.is_action_just_pressed("interact"):
+		match select:
+			0:
+				_on_back_to_menu_pressed()
+				if story_or_credits:
+					select = 2
+				else: 
+					select = 3
+			1:
+				_on_start_pressed()
+			2:
+				_on_story_pressed()
+				select = 0
+				story_or_credits = true
+			3:
+				_on_credits_pressed()
+				select = 0
+				story_or_credits = false
+			4:
+				_on_quit_pressed()
+		
+	var mouse_mov = Input.get_last_mouse_velocity().length()
+	if mouse_mov > 0:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		print("fart")
+		select = -1
 
 func _on_start_pressed() -> void:
 	if clickable == true:
@@ -43,6 +83,7 @@ func _on_story_pressed() -> void:
 		$story_text.show()
 		$BackToMenu.show()
 		clickable = false
+		in_sub_menu = true
 
 func _on_back_to_menu_pressed() -> void: # Only pressable while on the story screen
 	if clickable == false:

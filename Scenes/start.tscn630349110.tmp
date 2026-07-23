@@ -1,0 +1,142 @@
+[gd_scene load_steps=16 format=3 uid="uid://dahy2lduqiq1"]
+
+[ext_resource type="Script" uid="uid://47cb17x8kgnp" path="res://Scripts/start.gd" id="1_r48yj"]
+[ext_resource type="FontFile" uid="uid://cwe67381etcad" path="res://Fonts/Asai-Analogue.ttf" id="2_5ogh5"]
+[ext_resource type="Texture2D" uid="uid://cnvud6tfcra7h" path="res://Screens/logo.png" id="2_jwunu"]
+[ext_resource type="Texture2D" uid="uid://cljwdx7xdxna0" path="res://Button Icons/Start.png" id="3_o3wvq"]
+[ext_resource type="Texture2D" uid="uid://bni2bie1t8t4g" path="res://Button Icons/Start_hover.png" id="3_rk01k"]
+[ext_resource type="Texture2D" uid="uid://drcwthovcg7fp" path="res://Button Icons/Story.png" id="5_iceld"]
+[ext_resource type="Texture2D" uid="uid://cuktxjjqjg2o1" path="res://Screens/start_screen.png" id="5_knwj7"]
+[ext_resource type="Texture2D" uid="uid://cxf6pi8w0wr0l" path="res://Button Icons/Story_hover.png" id="6_7pwkw"]
+[ext_resource type="Texture2D" uid="uid://bcun5qopgwqu" path="res://Button Icons/quit.png" id="7_5bn4p"]
+[ext_resource type="AudioStream" uid="uid://5cw40qwguuml" path="res://Sfx/welc0mei0-190501-dark-industrial-ambient-mechanical-electronica-155502.mp3" id="7_jwunu"]
+[ext_resource type="Texture2D" uid="uid://cl3lqvtjsfp3y" path="res://Button Icons/quit_hover.png" id="8_qmsyr"]
+[ext_resource type="Texture2D" uid="uid://7m288tejiywe" path="res://Button Icons/goback.png" id="9_jwunu"]
+[ext_resource type="Texture2D" uid="uid://cwatwp38akf7d" path="res://Button Icons/goback_hover.png" id="10_1tr1b"]
+[ext_resource type="Texture2D" uid="uid://bql6p50o8384u" path="res://Button Icons/credits.png" id="12_ss8vn"]
+[ext_resource type="Texture2D" uid="uid://j3bi31ie8k0c" path="res://Button Icons/credits_hover.png" id="13_w5kog"]
+
+[node name="Start" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r48yj")
+
+[node name="Name" type="Sprite2D" parent="."]
+position = Vector2(960, 319)
+texture = ExtResource("2_jwunu")
+
+[node name="Credit" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1034.0
+offset_right = -1598.0
+theme_override_colors/font_color = Color(0.3872177, 0.054457575, 0, 0.47058824)
+theme_override_fonts/font = ExtResource("2_5ogh5")
+theme_override_font_sizes/font_size = 51
+text = " v0.4"
+
+[node name="BackToMenu" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 886.0
+offset_top = 950.0
+offset_right = -886.0
+offset_bottom = -97.875
+scale = Vector2(1.8, 1.8)
+pivot_offset = Vector2(74, 0)
+texture_normal = ExtResource("9_jwunu")
+texture_hover = ExtResource("10_1tr1b")
+stretch_mode = 3
+
+[node name="story_text" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 399.0
+offset_top = 374.0
+offset_right = -398.0
+offset_bottom = -147.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(561.5, 0)
+theme_override_colors/default_color = Color(0.8392157, 1, 1, 1)
+theme_override_constants/shadow_outline_size = 1
+theme_override_constants/outline_size = 3
+theme_override_fonts/normal_font = ExtResource("2_5ogh5")
+theme_override_font_sizes/normal_font_size = 61
+bbcode_enabled = true
+text = "Kostromvik Union, 198X
+
+After decades, a long abandoned nuclear reactor in a secluded region of the city of Krivichesk has mysteriously shown signs of activity. City records show no entry in or out of the region, or nothing else that would explain it, fueling decades-long whispers of strange happenings in the area. In a matter of three days, activity has grown exponentially and all signs indicate the unmanned reactor is rapidly approaching a meltdown. 
+
+You have been tasked with going into the reactor and pushing the implosion back for long enough to conduct a safe evacuation. 
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -4
+position = Vector2(959.99994, 540.00006)
+texture = ExtResource("5_knwj7")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_jwunu")
+volume_db = -20.0
+autoplay = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 810.0
+offset_top = 673.0
+offset_right = -960.0
+offset_bottom = -282.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+mouse_filter = 2
+theme_override_constants/separation = 11
+alignment = 1
+
+[node name="Start" type="TextureButton" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+action_mode = 0
+texture_normal = ExtResource("3_o3wvq")
+texture_hover = ExtResource("3_rk01k")
+stretch_mode = 5
+
+[node name="Story" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_iceld")
+texture_hover = ExtResource("6_7pwkw")
+stretch_mode = 5
+
+[node name="Credits" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("12_ss8vn")
+texture_hover = ExtResource("13_w5kog")
+stretch_mode = 5
+
+[node name="Quit" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_5bn4p")
+texture_hover = ExtResource("8_qmsyr")
+stretch_mode = 5
+
+[connection signal="pressed" from="BackToMenu" to="." method="_on_back_to_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Story" to="." method="_on_story_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
