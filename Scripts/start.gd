@@ -9,6 +9,9 @@ var select = -1
 var story_or_credits
 var in_sub_menu = false
 
+var line_count = 0
+	
+
 #Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var fade_in = create_tween()
@@ -64,11 +67,23 @@ func _process(_delta: float) -> void:
 				story_or_credits = false
 			4:
 				_on_quit_pressed()
-		
+	
+	var line_max = $story_text.get_line_count()
+	
+	if Input.is_action_pressed("move_forward") && in_sub_menu == true:
+		$story_text.scroll_to_line(line_count)
+		if line_count > 0:
+			line_count -= 1
+		pass
+	if Input.is_action_pressed("scroll_down") && in_sub_menu == true:
+		$story_text.scroll_to_line(line_count)
+		if line_count < line_max:
+			line_count += 1
+		pass
+	
 	var mouse_mov = Input.get_last_mouse_velocity().length()
 	if mouse_mov > 0:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		print("fart")
 		select = -1
 		reset_sprites()
 
@@ -81,6 +96,7 @@ func _on_quit_pressed() -> void:
 		get_tree().quit()
 
 func _on_story_pressed() -> void:
+	line_count = 0
 	if clickable == true:
 		$VBoxContainer.z_index = -3
 		$VBoxContainer/Start.hide()
@@ -107,6 +123,7 @@ After decades, a long abandoned nuclear reactor in a secluded region of the city
 
 You have been tasked with going into the reactor and pushing the implosion back for long enough to conduct a safe evacuation. 
 "
+		in_sub_menu = false
 		clickable = true
 
 func _on_credits_pressed() -> void:
