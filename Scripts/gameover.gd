@@ -40,7 +40,11 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("scroll_down"):
 		controller_input()
 		pass
-		
+	if Input.is_action_just_pressed("interact"):
+		if select == 0:
+			_on_restart_pressed()
+		elif select == 1:
+			_on_quit_pressed()
 	var mouse_mov = Input.get_last_mouse_velocity().length()
 	if mouse_mov > 0:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
