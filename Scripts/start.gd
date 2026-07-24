@@ -4,7 +4,6 @@ extends Control
 
 # var game_scene = preload("res://Scenes/main.tscn")
 var clickable = true
-var mouse_mode = true
 var select = -1
 var story_or_credits
 var in_sub_menu = false
@@ -23,25 +22,21 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("move_forward"):
 		if select == -1:
-			mouse_mode = false
 			select = 1
 			Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 			mouse_filter = Control.MOUSE_FILTER_IGNORE
 		elif select > 1:
 			select -= 1 
-			print(select)
 			set_controller_sprites(select)
 			pass
 	if Input.is_action_just_pressed("scroll_down"):
 		if select == -1:
-			mouse_mode = false
 			select = 1
 			set_controller_sprites(select)
 			Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 			mouse_filter = Control.MOUSE_FILTER_IGNORE
 		elif select >= 1 && select < 4:
 			select += 1 
-			print(select)
 			set_controller_sprites(select)
 			pass
 	if Input.is_action_just_pressed("interact"):
