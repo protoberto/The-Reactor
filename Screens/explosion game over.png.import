@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwstji4ig4v0s"
-path="res://.godot/imported/terminator-2-judgment-day.jpg-6664a2beb6abc2090bab8390fbf2af81.ctex"
+uid="uid://du5k5rfn8mjwb"
+path="res://.godot/imported/explosion game over.png-1ee8b8d6101dd315b35c900ba9836139.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Screens/terminator-2-judgment-day.jpg"
-dest_files=["res://.godot/imported/terminator-2-judgment-day.jpg-6664a2beb6abc2090bab8390fbf2af81.ctex"]
+source_file="res://Screens/explosion game over.png"
+dest_files=["res://.godot/imported/explosion game over.png-1ee8b8d6101dd315b35c900ba9836139.ctex"]
 
 [params]
 

@@ -14,8 +14,7 @@ func _ready() -> void:
 		1:
 			$DeathScreen.texutre = load("res://Screens/gameover.png")
 		2: 
-			$DeathScreen.texture = load("res://Screens/terminator-2-judgment-day.jpg")
-			$DeathScreen.scale = Vector2(2, 2)
+			$DeathScreen.texture = load("res://Screens/explosion game over.png")
 	match (randi_range(0, 6)):
 		0:
 			$Tip.text = "Keep an ear out for footsteps, you're never as safe as you think."
