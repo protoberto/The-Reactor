@@ -12,7 +12,7 @@ func _ready() -> void:
 		0:
 			$DeathScreen.texture = load("res://Screens/big guy death.png")
 		1:
-			$DeathScreen.texutre = load("res://Screens/gameover.png")
+			$DeathScreen.texutre = load("res://Screens/gremlin_death.png")
 		2: 
 			$DeathScreen.texture = load("res://Screens/explosion game over.png")
 	match (randi_range(0, 6)):

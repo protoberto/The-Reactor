@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hox8nmcwn4db"
-path="res://.godot/imported/gameover.png-2a03194fbf9aad973709991014fe733e.ctex"
+uid="uid://l1rjs5ebyo88"
+path="res://.godot/imported/gremlin_death.png-3abe696ad4191f5288e1419f65a1fba9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Screens/gameover.png"
-dest_files=["res://.godot/imported/gameover.png-2a03194fbf9aad973709991014fe733e.ctex"]
+source_file="res://Screens/gremlin_death.png"
+dest_files=["res://.godot/imported/gremlin_death.png-3abe696ad4191f5288e1419f65a1fba9.ctex"]
 
 [params]
 
