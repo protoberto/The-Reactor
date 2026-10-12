@@ -15,30 +15,30 @@ floor_constant_speed = true
 script = ExtResource("1_1f0kj")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 2.4, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 3.1, 0)
 shaded = true
 texture = ExtResource("2_afpow")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Sprite3D"]
-transform = Transform3D(0.625, 0, 0, 0, 0.625, 0, 0, 0, 0.625, 0.2316849, 1.2357626, 0.0053670257)
+transform = Transform3D(0.625, 0, 0, 0, 0.625, 0, 0, 0, 0.625, 0.25398362, 1.1724329, 0.0053670257)
 light_energy = 25.0
 omni_range = 0.1
 omni_attenuation = -0.492
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="Sprite3D"]
-transform = Transform3D(0.625, 0, 0, 0, 0.625, 0, 0, 0, 0.625, 0.2316849, 1.2357626, -0.009502294)
+transform = Transform3D(0.625, 0, 0, 0, 0.625, 0, 0, 0, 0.625, 0.25398362, 1.1724329, -0.009502294)
 light_energy = 25.0
 omni_range = 0.1
 omni_attenuation = -0.492
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Sprite3D"]
-transform = Transform3D(0.625, 0, 0, 0, 0.625, 0, 0, 0, 0.625, -0.12151901, 1.2508066, -0.0039075315)
+transform = Transform3D(0.625, 0, 0, 0, 0.625, 0, 0, 0, 0.625, -0.15727831, 1.1710498, -0.0039075315)
 light_energy = 25.0
 omni_range = 0.1
 omni_attenuation = -0.492
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="Sprite3D"]
-transform = Transform3D(0.625, 0, 0, 0, 0.625, 0, 0, 0, 0.625, -0.12151901, 1.2508068, 0.01170123)
+transform = Transform3D(0.625, 0, 0, 0, 0.625, 0, 0, 0, 0.625, -0.15727831, 1.1710498, 0.01170123)
 light_energy = 25.0
 omni_range = 0.1
 omni_attenuation = -0.492

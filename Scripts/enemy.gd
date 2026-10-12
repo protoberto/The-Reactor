@@ -41,8 +41,8 @@ func _ready() -> void:
 		$Steps.stream = load("res://Sfx/u_n1up2g5sdg-stomp-255897.mp3")
 	else:
 		$Sprite3D.texture = load("res://trenchbroom/textures/gremlin.png")
-		$Sprite3D.position.y = 2.4
-		$Sprite3D.scale = Vector3(1.6, 1.6, 1.6)
+		$Sprite3D.position.y = 3.1
+		$Sprite3D.scale = Vector3(2.0, 2.0, 2.0)
 		$Steps.stream = load("res://Sfx/dragon-studio-witch-laugh-401713.mp3")
 		_on_move()
 	$Steps.play()

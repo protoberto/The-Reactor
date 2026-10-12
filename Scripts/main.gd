@@ -118,7 +118,6 @@ func _on_door_timer_timeout() -> void: # Updates amount of doors that can be clo
 	if difficulty > 1:
 		if $DoorTimer2.is_stopped():
 			await get_tree().create_timer(5).timeout
-			print("door 2")
 			$DoorTimer2.start()
 
 func _on_door_timer_2_timeout() -> void:
@@ -126,7 +125,6 @@ func _on_door_timer_2_timeout() -> void:
 	if difficulty > 3:
 		if $DoorTimer3.is_stopped():
 			await get_tree().create_timer(5).timeout
-			print("door 3")
 			$DoorTimer3.start()
 
 func _on_door_timer_3_timeout() -> void:
