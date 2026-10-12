@@ -5,7 +5,7 @@ extends Node3D
 @export var connected_dir: Array[String] = [] # AND EACH ELEMENT MATCHING
 @onready var nav_region = get_tree().get_first_node_in_group("level")
 
-var is_open = true
+var is_open = true # Confirms whether a given door is open or closed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -7,7 +7,7 @@ var extra_speed = 0
 enum State { DEAD, MOVE }
 var state : State = State.MOVE
 
-var room_locs: Array[Vector3] = [
+var room_locs: Array[Vector3] = [ # an array of set room locations, allows the goblin enemy to pick from them at random
 	Vector3(40.8333, 0, 49.758), # Room 0
 	Vector3(81.338, 0, 9.045), # Room 1
 	Vector3(81.316, 0, 49.758), # Room 2
@@ -17,12 +17,12 @@ var room_locs: Array[Vector3] = [
 	Vector3(0.231, 0, 49.758), # Room 6
 	Vector3(0.231, 0, 9.045), # Room 7
 	Vector3(40.598, 0, 9.045), # Room 8
-]
+] # Doesn't include the terminal rooms so the goblin can't get in
 
-var player_x = 0.231
-var player_z = 9.045
+var player_x = 0.231 # Player location to be updated, set to room 7 (corner) by default
+var player_z = 9.045 # Followed by the big enemy to chase the player down
 
-@onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
+@onready var nav_agent: NavigationAgent3D = $NavigationAgent3D # Declates var for the navigation agent
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -54,7 +54,7 @@ func _process(delta: float) -> void:
 	
 	match state:
 		State.DEAD:
-			_on_death()
+			_on_death() # Death state is currently unused, could get brought back in a different mode
 		State.MOVE:
 			if enemy_type == 0:
 				_chase()
@@ -66,7 +66,7 @@ func _process(delta: float) -> void:
 func _on_death():
 	velocity = Vector3.ZERO # FINISH IF SHOOTING MECHANIC IS IMPLEMENTED
 
-func _on_move():
+func _on_move(): # Chooses a new room for the smaller enemy to rush into
 	nav_agent.target_position = room_locs.pick_random()
 	
 func goblin_brain(): # Separate from on_move to prevent it from constantly changing rooms

@@ -205,4 +205,3 @@ func set_controller_sprites(button):
 			$VBoxContainer/Quit.texture_normal = load("res://Button Icons/quit_hover.png")
 			$VBoxContainer/Quit.texture_hover = load("res://Button Icons/quit_hover.png")
 	pass
-	

@@ -64,3 +64,7 @@ signal increase_difficulty() # Self-explanatory, for each individual object to h
 
 @warning_ignore("unused_signal")
 signal game_over(cod) # Self-explanatory
+
+@warning_ignore("unused_signal")
+signal victory() # Updates a value confirming the player has beat the game at least once
+# May be used in case I want to add any kind of unlockable later on
